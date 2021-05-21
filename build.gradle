@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation (
+    testImplementation(
             "com.aspose:aspose-pdf:21.4",
             "com.codeborne:selenide:5.21.0",
             "org.junit.jupiter:junit-jupiter-api:5.7.1",

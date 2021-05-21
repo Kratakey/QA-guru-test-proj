@@ -46,4 +46,9 @@ public class Tests {
         $(byName("q")).setValue("Allure testops").pressEnter();
         $("#search").shouldHave(text("qameta.io"));
     }
+    @Test
+    void allureSearchTest2() {
+        $(byName("q")).setValue("Allure testops").pressEnter();
+        $("#search").shouldHave(text("qameta.io"));
+    }
 }
