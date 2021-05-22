@@ -33,7 +33,9 @@ public class TextBoxTests {
         $("[id=gender-radio-1]").doubleClick();
         $("[id=userNumber]").setValue("2024561111");
 
+        $("[id=subjectsInput").setValue("Physics").pressEnter().setValue("Math").pressEnter().setValue("English").pressEnter();
         $("[for=hobbies-checkbox-1]").click();
+
         $("[id=currentAddress]").setValue("Buckingham Palace London SW1A 1AA");
         $("[id=state").click();
         $("[id=react-select-3-option-0]").click();
@@ -45,7 +47,12 @@ public class TextBoxTests {
                 text("JohnCena@JC.pro"),
                 text("Male"),
                 text("2024561111"),
+
+                text("Physics"),
+                text("Math"),
+                text("English"),
                 text("Sports"),
+
                 text("Buckingham Palace London SW1A 1AA"),
                 text("NCR"),
                 text("Delhi")
