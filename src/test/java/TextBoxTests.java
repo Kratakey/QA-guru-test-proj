@@ -8,8 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selectors.byName;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxTests {
@@ -32,7 +31,10 @@ public class TextBoxTests {
         $("[id=userEmail]").setValue("JohnCena@JC.pro");
         $("[id=gender-radio-1]").doubleClick();
         $("[id=userNumber]").setValue("2024561111");
-
+        $("[id=dateOfBirthInput").click();
+        $(".react-datepicker__year-select").selectOption("1958");
+        $(".react-datepicker__month-select").selectOption("August");
+        $(byText("29"), 1).click();
         $("[id=subjectsInput").setValue("Physics").pressEnter().setValue("Math").pressEnter().setValue("English").pressEnter();
         $("[for=hobbies-checkbox-1]").click();
 
@@ -47,7 +49,7 @@ public class TextBoxTests {
                 text("JohnCena@JC.pro"),
                 text("Male"),
                 text("2024561111"),
-
+                text("29 August,1958"),
                 text("Physics"),
                 text("Math"),
                 text("English"),
