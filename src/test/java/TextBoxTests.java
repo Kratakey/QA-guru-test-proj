@@ -1,11 +1,16 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.commands.UploadFile;
+import com.codeborne.selenide.commands.UploadFileFromClasspath;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.net.www.content.image.png;
+
+import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
@@ -37,7 +42,7 @@ public class TextBoxTests {
         $(byText("29"), 1).click();
         $("[id=subjectsInput").setValue("Physics").pressEnter().setValue("Math").pressEnter().setValue("English").pressEnter();
         $("[for=hobbies-checkbox-1]").click();
-
+        $("input[id=uploadPicture]").uploadFile(new File("src/test/resources/png.jpg"));
         $("[id=currentAddress]").setValue("Buckingham Palace London SW1A 1AA");
         $("[id=state").click();
         $("[id=react-select-3-option-0]").click();
@@ -54,7 +59,7 @@ public class TextBoxTests {
                 text("Math"),
                 text("English"),
                 text("Sports"),
-
+                text("png.jpg"),
                 text("Buckingham Palace London SW1A 1AA"),
                 text("NCR"),
                 text("Delhi")
