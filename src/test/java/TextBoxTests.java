@@ -32,15 +32,24 @@ public class TextBoxTests {
         $("[id=userEmail]").setValue("JohnCena@JC.pro");
         $("[id=gender-radio-1]").doubleClick();
         $("[id=userNumber]").setValue("2024561111");
+
+        $("[for=hobbies-checkbox-1]").click();
         $("[id=currentAddress]").setValue("Buckingham Palace London SW1A 1AA");
+        $("[id=state").click();
+        $("[id=react-select-3-option-0]").click();
+        $("[id=city").click();
+        $("[id=react-select-4-option-0]").click();
         $("[id=submit").click();
 
-        $("tr", 1).shouldHave(text("John Cena"));
-        $("tr", 2).shouldHave(text("JohnCena@JC.pro"));
-        $("tr", 3).shouldHave(text("Male"));
-        $("tr", 4).shouldHave(text("2024561111"));
-        $("tr", 5).shouldHave(text("21 May,2021"));
-        $("tr", 9).shouldHave(text("Buckingham Palace London SW1A 1AA"));
+        $("tbody").shouldHave(text("John Cena"),
+                text("JohnCena@JC.pro"),
+                text("Male"),
+                text("2024561111"),
+                text("Sports"),
+                text("Buckingham Palace London SW1A 1AA"),
+                text("NCR"),
+                text("Delhi")
+        );
 
     }
 
